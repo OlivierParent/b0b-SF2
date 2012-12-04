@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source><![CDATA[<b>artevelde</b> university college ghent]]></source>
+                <target><![CDATA[<b>artevelde</b>hogeschool]]></target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>Account</source>
+                <target>Account</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>and weighs</source>
+                <target>en weegt</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>b0b drank</source>
+                <target>b0b dronk</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>b0b is</source>
+                <target>b0b is een</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>b0b’s alcohol consumption</source>
+                <target>b0bs alcoholconsumptie</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>b0b’s personal details</source>
+                <target>b0bs persoonlijke gegevens</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>b0b’s nickname</source>
+                <target>b0bs bijnaam</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>Email address</source>
+                <target>E-mailadres</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>Family name</source>
+                <target>Familienaam</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>female</source>
+                <target>vrouw</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>Gender</source>
+                <target>Geslacht</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>Given name</source>
+                <target>Voornaam</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>Home</source>
+                <target>Start</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>hours.</source>
+                <target>uur.</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>in</source>
+                <target>in</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>Log in as b0b</source>
+                <target>Meld je aan als b0b</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>Log me in!</source>
+                <target>Meld mij aan!</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>Login</source>
+                <target>Aanmelden</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>male</source>
+                <target>vent</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>Password</source>
+                <target>Wachtwoord</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>Password (repeat)</source>
+                <target>Wachtwoord herhalen</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>Personal details</source>
+                <target>Persoonlijke gegevens</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>Remember me</source>
+                <target>Onthoud mij</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>Register</source>
+                <target>Registreren</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>Register as b0b</source>
+                <target>Registreer je b0b</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>Register me!</source>
+                <target>Registreer mij!</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>Start over!</source>
+                <target>Probeer opnieuw!</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>Tell me!</source>
+                <target>Zeg het mij!</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>Tell me again!</source>
+                <target>Zeg het mij nog eens!</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>units</source>
+                <target>glazen</target>
+            </trans-unit>
+            <trans-unit id="32">
+                <source>What's your b0b’s name?</source>
+                <target>Hoe heet jouw b0b?</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

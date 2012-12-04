@@ -1,0 +1,59 @@
+{#
+ ******************************************************************************
+ *                                                                            *
+ *                                                                            *
+ *                                                                            *
+ *                        aaaAAaaa            HHHHHH                          *
+ *                     aaAAAAAAAAAAaa         HHHHHH                          *
+ *                    aAAAAAAAAAAAAAAa        HHHHHH                          *
+ *                   aAAAAAAAAAAAAAAAAa       HHHHHH                          *
+ *                   aAAAAAa    aAAAAAA                                       *
+ *                   AAAAAa      AAAAAA                                       *
+ *                   AAAAAa      AAAAAA                                       *
+ *                   aAAAAAa     AAAAAA                                       *
+ *                    aAAAAAAaaaaAAAAAA       HHHHHH                          *
+ *                     aAAAAAAAAAAAAAAA       HHHHHH                          *
+ *                      aAAAAAAAAAAAAAA       HHHHHH                          *
+ *                         aaAAAAAAAAAA       HHHHHH                          *
+ *                                                                            *
+ *                                                                            *
+ *                                                                            *
+ *      a r t e v e l d e  u n i v e r s i t y  c o l l e g e  g h e n t      *
+ *                                                                            *
+ *                                                                            *
+ *                                 MEMBER OF GHENT UNIVERITY ASSOCIATION      *
+ *                                                                            *
+ *                                                                            *
+ ******************************************************************************
+ *
+ * @author     Olivier Parent
+ * @copyright  Copyright (c) 2012 Artevelde University College Ghent
+ *
+#}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}b0b-o-nickulator{% endblock %}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('bundles/ahsb0b/images/favicon.ico') }}" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Exo:200,800" /><!-- http://www.google.com/webfonts -->
+    <link rel="stylesheet" href="{{ asset('bundles/ahsb0b/css/normalize-2.0.1.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/ahsb0b/css/base.css') }}" />
+    <script src="{{ asset('bundles/ahsb0b/js/modernizr-2.6.2.min.js') }}"></script>
+</head>
+
+<body>
+{% block navigation %}{% endblock %}
+{% block header %}
+    <header>
+        <h1>{% block header_title %}b0b-o-nickulator{% endblock %}</h1>
+    </header>
+{% endblock header %}
+{% block content %}{% endblock %}
+{% block footer %}
+    <footer>
+        <p class="copy">&#169; {{ date()|date('Y') }} <a href="http://www.arteveldehogeschool.be/">{% trans %}<b>artevelde</b> university college ghent{% endtrans %}</a></p>
+    </footer>
+{% endblock footer %}
+</body>
+</html>

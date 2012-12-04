@@ -1,0 +1,12 @@
+
+{# This Form Theme overrides vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form/form_div_layout.html.twig #}
+
+{% block gender_widget %}
+    {% spaceless %}
+        {% if expanded %}
+            {% for child in form %}<label class="wrap">{{ form_widget(child) }} {{ child.vars.label|trans }}</label>&nbsp;{% endfor %}
+        {% else %}
+            {{ block('choice_widget') }}
+        {% endif %}
+    {% endspaceless %}
+{% endblock %}

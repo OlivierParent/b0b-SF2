@@ -1,0 +1,11 @@
+ahs_b0b_homepage:
+    pattern:  /
+    defaults: { _controller: AhsB0bBundle:Default:index }
+
+ahs_b0b_loginpage:
+    pattern:  /login
+    defaults: { _controller: AhsB0bBundle:User:login }
+
+ahs_b0b_registerpage:
+    pattern:  /register
+    defaults: { _controller: AhsB0bBundle:User:register }

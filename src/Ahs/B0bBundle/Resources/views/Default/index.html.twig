@@ -1,0 +1,82 @@
+{#
+ ******************************************************************************
+ *                                                                            *
+ *                                                                            *
+ *                                                                            *
+ *                        aaaAAaaa            HHHHHH                          *
+ *                     aaAAAAAAAAAAaa         HHHHHH                          *
+ *                    aAAAAAAAAAAAAAAa        HHHHHH                          *
+ *                   aAAAAAAAAAAAAAAAAa       HHHHHH                          *
+ *                   aAAAAAa    aAAAAAA                                       *
+ *                   AAAAAa      AAAAAA                                       *
+ *                   AAAAAa      AAAAAA                                       *
+ *                   aAAAAAa     AAAAAA                                       *
+ *                    aAAAAAAaaaaAAAAAA       HHHHHH                          *
+ *                     aAAAAAAAAAAAAAAA       HHHHHH                          *
+ *                      aAAAAAAAAAAAAAA       HHHHHH                          *
+ *                         aaAAAAAAAAAA       HHHHHH                          *
+ *                                                                            *
+ *                                                                            *
+ *                                                                            *
+ *      a r t e v e l d e  u n i v e r s i t y  c o l l e g e  g h e n t      *
+ *                                                                            *
+ *                                                                            *
+ *                                 MEMBER OF GHENT UNIVERITY ASSOCIATION      *
+ *                                                                            *
+ *                                                                            *
+ ******************************************************************************
+ *
+ * @author     Olivier Parent
+ * @copyright  Copyright (c) 2012 Artevelde University College Ghent
+ *
+#}
+
+{% extends 'AhsB0bBundle::layout.html.twig' %}
+
+{% form_theme form 'AhsB0bBundle:Form:form_div_layout.html.twig' %}
+
+{% block navigation %}
+<nav>
+    <ul>
+        <li><a href="{{ path('ahs_b0b_loginpage'   ) }}">{% trans %}Login{% endtrans %}</a></li>
+        <li><a href="{{ path('ahs_b0b_registerpage') }}">{% trans %}Register{% endtrans %}</a></li>
+    </ul>
+</nav>
+{% endblock navigation %}
+
+{% block header_title %}{% trans %}What's your b0b’s name?{% endtrans %}{% endblock %}
+
+{% block content %}
+    <section>
+        <form novalidate="novalidate" id="form-bal" method="post">
+            <fieldset class="box style-a">
+                <legend>{% trans %}b0b’s personal details{% endtrans %}</legend>
+                {# {{ form_widget(form) }} #}
+                <dl>
+                    <dt>{{ form_label( form.gender) }}</dt>
+                    <dd>{{ form_widget(form.gender) }}{{ form_errors(form.gender) }}</dd>
+                    <dt>{{ form_label( form.weight) }}</dt>
+                    <dd>{{ form_widget(form.weight) }}{{ form_errors(form.weight) }} kg</dd>
+                </dl>
+            </fieldset>
+            <fieldset class="box style-b">
+                <legend>{% trans %}b0b’s alcohol consumption{% endtrans %}</legend>
+                <dl>
+                    <dt>{{ form_label( form.units) }}</dt>
+                    <dd>{{ form_widget(form.units) }}{{ form_errors(form.units ) }} {% trans %}units{% endtrans %}</dd>
+                    <dt>{{ form_label( form.hours) }}</dt>
+                    <dd>{{ form_widget(form.hours) }}{{ form_errors(form.hours ) }} {% trans %}hours.{% endtrans %}</dd>
+                </dl>
+            </fieldset>
+{% if (bal != null) %}
+            <div class="box style-c">
+                <h2>{% trans %}b0b’s nickname{% endtrans %}</h2>
+                {{ bal|raw }}
+            </div>
+            <p><input name="button-bal" type="submit" value="{% trans %}Tell me again!{% endtrans %}"> <input name="button-reset" type="submit" value="{% trans %}Start over!{% endtrans %}"></p>
+{% else %}
+            <p><input name="button-bal" type="submit" value="{% trans %}Tell me!{% endtrans %}"></p>
+{% endif %}
+        </form>
+    </section>
+{% endblock content %}

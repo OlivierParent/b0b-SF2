@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source><![CDATA[<p>Blood Alcohol Level: %.2f ‰.<br>Bob’s nickname is: ’<strong>%s</strong>’!</p><p>%s</p>]]></source>
+                <target><![CDATA[<p>Bloedalcoholgehalte: %.2f ‰.<br>Bobs bijnaam is: ’<strong>%s</strong>’!</p><p>%s</p>]]></target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>Coma Correy|Coma Conny</source>
+                <target>Coma Corneel|Coma Cornelia</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Dump the bro in the trunk … together with the keys.|Dump the ho in the trunk … together with the keys.</source>
+                <target>Dump de bro maar in de kofferbak … samen met de sleutels.|Dump de ho maar in de kofferbak … samen met de sleutels.</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>Fun assured … up to the first bend.</source>
+                <target>Fun verzekerd … tot aan de eerste bocht.</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Risky Ronald|Risky Rita</source>
+                <target>Risico Ronald|Risico Rita</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Taxi b0b</source>
+                <target>Taxi b0b</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>Tipsy Timmy|Tipsy Trixy</source>
+                <target>Tipsy Timmy|Tipsy Trixy</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>Tha damn dog ain’t drivin’ no moh. 4 like 4evah.|Tha damn bitch ain’t drivin’ no moh. 4 like 4evah.</source>
+                <target>Tha damn dog ain’t drivin’ no moh. 4 like 4evah.|Tha damn bitch ain’t drivin’ no moh. 4 like 4evah.</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>Tommy Totalloss|Tory Totalloss</source>
+                <target>Straalbezopen Steven|Straalbezopen Steffi</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>Wasted Wally|Wasted Wanda</source>
+                <target>Zjatte Zjef|Zjatte Zjulma</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>You’ll get home safely without any problems.</source>
+                <target>Je komt zonder problemen veilig thuis.</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>You’ll probably get home without too many scratches.</source>
+                <target>Je raakt vast wel thuis zonder al te veel schrammen.</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>You’re safe. He won’t find his car tonight anyway.|You’re safe. She won’t find her car tonight anyway.</source>
+                <target>Je bent safe. Hij vindt zijn auto toch niet meer terug vanavond.|Je bent safe. Ze vindt haar auto toch niet meer terug vanavond.</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>You’re suicidal if you drive home with this b0b.</source>
+                <target>Je bent levensmoe als je met deze b0b meerijdt.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

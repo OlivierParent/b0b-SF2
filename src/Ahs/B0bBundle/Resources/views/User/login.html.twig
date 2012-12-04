@@ -1,0 +1,66 @@
+{#
+ ******************************************************************************
+ *                                                                            *
+ *                                                                            *
+ *                                                                            *
+ *                        aaaAAaaa            HHHHHH                          *
+ *                     aaAAAAAAAAAAaa         HHHHHH                          *
+ *                    aAAAAAAAAAAAAAAa        HHHHHH                          *
+ *                   aAAAAAAAAAAAAAAAAa       HHHHHH                          *
+ *                   aAAAAAa    aAAAAAA                                       *
+ *                   AAAAAa      AAAAAA                                       *
+ *                   AAAAAa      AAAAAA                                       *
+ *                   aAAAAAa     AAAAAA                                       *
+ *                    aAAAAAAaaaaAAAAAA       HHHHHH                          *
+ *                     aAAAAAAAAAAAAAAA       HHHHHH                          *
+ *                      aAAAAAAAAAAAAAA       HHHHHH                          *
+ *                         aaAAAAAAAAAA       HHHHHH                          *
+ *                                                                            *
+ *                                                                            *
+ *                                                                            *
+ *      a r t e v e l d e  u n i v e r s i t y  c o l l e g e  g h e n t      *
+ *                                                                            *
+ *                                                                            *
+ *                                 MEMBER OF GHENT UNIVERITY ASSOCIATION      *
+ *                                                                            *
+ *                                                                            *
+ ******************************************************************************
+ *
+ * @author     Olivier Parent
+ * @copyright  Copyright (c) 2012 Artevelde University College Ghent
+ *
+#}
+
+{% extends 'AhsB0bBundle::layout.html.twig' %}
+
+{% block title %}Aanmelden ← {{ parent() }}{% endblock %}
+
+{% block navigation %}
+<nav>
+    <ul>
+        <li><a href="{{ path('ahs_b0b_registerpage') }}">{% trans %}Register{% endtrans %}</a></li>
+        <li><a href="{{ path('ahs_b0b_homepage' ) }}">{% trans %}Home{% endtrans %}</a></li>
+    </ul>
+</nav>
+{% endblock navigation %}
+
+{% block header_title %}{% trans %}Log in as b0b{% endtrans %}{% endblock %}
+
+{# Login Form #}
+{% block content %}
+    <section>
+        <form novalidate="novalidate" id="form-login" action="{{ path('ahs_b0b_loginpage') }}" method="post"{{ form_enctype(form) }}>
+            <fieldset class="box style-b">
+                <legend>{% trans %}Login{% endtrans %}</legend>
+                {# {{ form_widget(form) }} #}
+                <dl>
+                    <dd>{{ form_widget(form.email      ) }}{{ form_errors(form.email      ) }}</dd>
+                    <dd>{{ form_widget(form.passwordRaw) }}{{ form_errors(form.passwordRaw) }}</dd>
+                    <dd><label class="wrap"><input name="remember" type="checkbox" checked> {% trans %}Remember me{% endtrans %}.</label></dd>
+                </dl>
+            </fieldset>
+            <p><input name="button-login" type="submit" value="{% trans %}Log me in!{% endtrans %}"></p>
+            {{ form_rest(form) }}
+        </form>
+    </section>
+{% endblock content %}

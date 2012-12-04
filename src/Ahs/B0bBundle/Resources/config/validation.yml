@@ -1,0 +1,17 @@
+Ahs\B0bBundle\Entity\User:
+  properties:
+      givenname:
+        - NotBlank: {groups: [registration] }
+      familyname:
+        - NotBlank: { groups: [registration] }
+      email:
+        - NotBlank: { groups: [login, registration] }
+        - Email: { groups: [login, registration] }
+      gender:
+        - NotBlank: { groups: [registration] }
+      weight:
+        - NotBlank: { message: "Enter a value for weight.", groups: [registration] }
+        - Range:
+            min: 10
+            max: 200
+            groups: [registration]

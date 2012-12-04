@@ -1,0 +1,78 @@
+{#
+ ******************************************************************************
+ *                                                                            *
+ *                                                                            *
+ *                                                                            *
+ *                        aaaAAaaa            HHHHHH                          *
+ *                     aaAAAAAAAAAAaa         HHHHHH                          *
+ *                    aAAAAAAAAAAAAAAa        HHHHHH                          *
+ *                   aAAAAAAAAAAAAAAAAa       HHHHHH                          *
+ *                   aAAAAAa    aAAAAAA                                       *
+ *                   AAAAAa      AAAAAA                                       *
+ *                   AAAAAa      AAAAAA                                       *
+ *                   aAAAAAa     AAAAAA                                       *
+ *                    aAAAAAAaaaaAAAAAA       HHHHHH                          *
+ *                     aAAAAAAAAAAAAAAA       HHHHHH                          *
+ *                      aAAAAAAAAAAAAAA       HHHHHH                          *
+ *                         aaAAAAAAAAAA       HHHHHH                          *
+ *                                                                            *
+ *                                                                            *
+ *                                                                            *
+ *      a r t e v e l d e  u n i v e r s i t y  c o l l e g e  g h e n t      *
+ *                                                                            *
+ *                                                                            *
+ *                                 MEMBER OF GHENT UNIVERITY ASSOCIATION      *
+ *                                                                            *
+ *                                                                            *
+ ******************************************************************************
+ *
+ * @author     Olivier Parent
+ * @copyright  Copyright (c) 2012 Artevelde University College Ghent
+ *
+#}
+
+{% extends 'AhsB0bBundle::layout.html.twig' %}
+
+{% form_theme form 'AhsB0bBundle:Form:form_div_layout.html.twig' %}
+
+{% block title %}Registreren ← {{ parent() }}{% endblock %}
+
+{% block navigation %}
+<nav>
+    <ul>
+        <li><a href="{{ path('ahs_b0b_loginpage') }}">{% trans %}Login{% endtrans %}</a></li>
+        <li><a href="{{ path('ahs_b0b_homepage' ) }}">{% trans %}Home{% endtrans %}</a></li>
+    </ul>
+</nav>
+{% endblock navigation %}
+
+{% block header_title %}{% trans %}Register as b0b{% endtrans %}{% endblock %}
+
+{# Registration Form #}
+{% block content %}
+    <section>
+        <form novalidate="novalidate" id="form-register" action="{{ path('ahs_b0b_registerpage') }}" method="post"{{ form_enctype(form) }}>
+            <fieldset class="box style-a">
+                <legend>{% trans %}Account{% endtrans %}</legend>
+                {# {{ form_widget(form) }} #}
+                <dl>
+                    <dd>{{ form_widget(form.givenname ) }}{{ form_errors(form.givenname ) }}</dd>
+                    <dd>{{ form_widget(form.familyname) }}{{ form_errors(form.familyname) }}</dd>
+                    <dd>{{ form_widget(form.email     ) }}{{ form_errors(form.email     ) }}</dd>
+                    {% for item in form.passwordRaw %}
+                    <dd>{{ form_widget(item           ) }}{{ form_errors(item           ) }}</dd>
+                    {% endfor %}
+                </dl>
+            </fieldset>
+            <fieldset class="box style-b">
+                <legend>{% trans %}Personal details{% endtrans %}</legend>
+                <dl>
+                    <dd>{{ form_widget(form.gender    ) }}{{ form_errors(form.gender    ) }}</dd>
+                    <dd>{{ form_widget(form.weight    ) }} {{ form_label(form.weight, 'kg') }}{{ form_errors(form.weight) }}</dd>
+                </dl>
+            </fieldset>
+            <p><input name="button-register" type="submit" value="{% trans %}Register me!{% endtrans %}"></p>
+            {{ form_rest(form) }}
+        </form>
+    </section>
+{% endblock content %}
