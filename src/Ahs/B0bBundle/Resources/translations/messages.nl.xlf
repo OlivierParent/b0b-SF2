@@ -79,54 +79,58 @@
                 <target>Aanmelden</target>
             </trans-unit>
             <trans-unit id="20">
+                <source>Logout</source>
+                <target>Afmelden</target>
+            </trans-unit>
+            <trans-unit id="21">
                 <source>male</source>
                 <target>vent</target>
             </trans-unit>
-            <trans-unit id="21">
+            <trans-unit id="22">
                 <source>Password</source>
                 <target>Wachtwoord</target>
             </trans-unit>
-            <trans-unit id="22">
+            <trans-unit id="23">
                 <source>Password (repeat)</source>
                 <target>Wachtwoord herhalen</target>
             </trans-unit>
-            <trans-unit id="23">
+            <trans-unit id="24">
                 <source>Personal details</source>
                 <target>Persoonlijke gegevens</target>
             </trans-unit>
-            <trans-unit id="24">
+            <trans-unit id="25">
                 <source>Remember me</source>
                 <target>Onthoud mij</target>
             </trans-unit>
-            <trans-unit id="25">
+            <trans-unit id="26">
                 <source>Register</source>
                 <target>Registreren</target>
             </trans-unit>
-            <trans-unit id="26">
+            <trans-unit id="27">
                 <source>Register as b0b</source>
                 <target>Registreer je b0b</target>
             </trans-unit>
-            <trans-unit id="27">
+            <trans-unit id="28">
                 <source>Register me!</source>
                 <target>Registreer mij!</target>
             </trans-unit>
-            <trans-unit id="28">
+            <trans-unit id="29">
                 <source>Start over!</source>
                 <target>Probeer opnieuw!</target>
             </trans-unit>
-            <trans-unit id="29">
+            <trans-unit id="30">
                 <source>Tell me!</source>
                 <target>Zeg het mij!</target>
             </trans-unit>
-            <trans-unit id="30">
+            <trans-unit id="31">
                 <source>Tell me again!</source>
                 <target>Zeg het mij nog eens!</target>
             </trans-unit>
-            <trans-unit id="31">
+            <trans-unit id="32">
                 <source>units</source>
                 <target>glazen</target>
             </trans-unit>
-            <trans-unit id="32">
+            <trans-unit id="33">
                 <source>What's your b0b’s name?</source>
                 <target>Hoe heet jouw b0b?</target>
             </trans-unit>
