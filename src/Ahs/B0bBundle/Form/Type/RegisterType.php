@@ -52,16 +52,16 @@ class RegisterType extends AbstractType
                 ->add('email'         , 'email', array(
                     'attr' => array('placeholder' => 'Email address')
                 ))
-                ->add('passwordRaw'   , 'repeated', array(
+                ->add('password'      , 'repeated', array(
                     'type'           => 'password',
                     'first_name'     => 'password',
                     'second_name'    => 'confirm',
                     'first_options'  => array (
-                        'label' => 'Wachtwoord',
+                        'label' => 'Password',
                         'attr'  => array('placeholder' => 'Password'),
                      ),
                     'second_options' => array (
-                        'label' => 'Wachtwoord herhalen',
+                        'label' => 'Password (repeat)',
                         'attr'  => array('placeholder' => 'Password (repeat)'),
                      ),
                      'invalid_message' => 'The passwords are not identical.',
