@@ -29,17 +29,17 @@
  * @author     Olivier Parent
  * @copyright  Copyright (c) 2012 Artevelde University College Ghent
  */
-
 namespace Ahs\B0bBundle\Entity;
 
-use Ahs\B0bBundle\B0b\Utility;
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
+
 use Doctrine\ORM\Mapping as ORM; // Import ORM annotations prefix
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="users")
  */
-class User
+class User implements AdvancedUserInterface
 {
     /**
      * @ORM\Id
@@ -62,17 +62,23 @@ class User
     protected $familyname;
 
     /**
-     * @ORM\Column(name="usr_email", type="string", length=255)
+     * @ORM\Column(name="usr_email", type="string", length=255, unique=true)
      * @var string Email address
      */
     protected $email;
 
+
     /**
-     * @ORM\Column(name="usr_password", type="string", columnDefinition="CHAR(64) NOT NULL")
-     * @var string Hashed password
+     * @ORM\Column(name="usr_salt", type="string", columnDefinition="CHAR(64) NOT NULL")
+     * @var string Salt
+     */
+    protected $salt;
+
+    /**
+     * @ORM\Column(name="usr_password", type="string", columnDefinition="CHAR(128) NOT NULL")
+     * @var string Password
      */
     protected $password;
-    protected $passwordRaw;
 
     /**
      * @ORM\Column(name="usr_gender", type="string", columnDefinition="ENUM('m', 'f') NOT NULL")
@@ -86,10 +92,20 @@ class User
      */
     protected $weight;
 
-    public function __construct($weight = null, $gender = null)
+    /**
+     *
+     * @ORM\Column(name="usr_active", type="boolean")
+     * @var boolean
+     */
+    protected $isActive;
+
+
+    public function __construct($gender = null, $weight = null)
     {
-        $this->setWeight($weight);
+        $this->isActive = true;
+        $this->salt = hash_hmac('sha256', uniqid(null, true), 'b0b’s Super Secret Key!');
         $this->setGender($gender);
+        $this->setWeight($weight);
     }
 
     public function getId()
@@ -142,16 +158,6 @@ class User
         $this->password = $password;
     }
 
-    public function getPasswordRaw()
-    {
-        return $this->getPassword();
-    }
-
-    public function setPasswordraw($password)
-    {
-        $this->setPassword(Utility::hash($password));
-    }
-
     public function getGender()
     {
         return $this->gender;
@@ -180,5 +186,83 @@ class User
     public function setRemember($remember)
     {
         $this->remember = $remember;
+    }
+
+    /**
+     * Implementation of UserInterface method
+     */
+    public function eraseCredentials()
+    {
+        // Do nothing.
+    }
+
+    /**
+     * Implementation of UserInterface method
+     *
+     * @return array Roles
+     */
+    public function getRoles()
+    {
+        return array('ROLE_USER');
+    }
+
+    /**
+     * Implementation of UserInterface method
+     *
+     * @return string
+     */
+    public function getSalt()
+    {
+        return $this->salt;
+    }
+
+    /**
+     * Implementation of UserInterface method
+     *
+     * @return string
+     */
+    public function getUsername()
+    {
+        return $this->getEmail();
+    }
+
+    /**
+     * Implementation of AdvacedUserInterface method
+     *
+     * @return boolean
+     */
+    public function isAccountNonExpired()
+    {
+        return true;
+    }
+
+    /**
+     * Implementation of AdvacedUserInterface method
+     *
+     * @return boolean
+     */
+    public function isAccountNonLocked()
+    {
+        return true;
+    }
+
+    /**
+     * Implementation of AdvacedUserInterface method
+     *
+     * @return boolean
+     */
+    public function isCredentialsNonExpired()
+    {
+        return true;
+    }
+
+    /**
+     * Implementation of AdvacedUserInterface method
+     *
+     * @return boolean
+     */
+    public function isEnabled()
+    {
+        return true;
     }
 }

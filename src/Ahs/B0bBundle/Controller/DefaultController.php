@@ -45,7 +45,19 @@ class DefaultController extends Controller
     {
         $request->setLocale($request->getPreferredLanguage());
 
-        $data = array();
+
+        $user = $this->get('security.context')
+                     ->getToken()
+                     ->getUser();
+
+        if (is_object($user)) {
+            $data = array(
+                'gender' => $user->getGender(),
+                'weight' => $user->getWeight(),
+            );
+        } else {
+            $data = array();
+        }
 
         $form = $this->createForm(new HomeType(), $data);
 
@@ -53,14 +65,11 @@ class DefaultController extends Controller
             $form->bind($request);
 
             $post = $request->request->get('home');
-//            \Ahs\B0bBundle\B0b\Utility::debug($post);
 
-            $user = new User($post['weight'], $post['gender']);
-//            \Ahs\B0bBundle\B0b\Utility::debug($user);
+            $user = new User($post['gender'], $post['weight']);
 
             $bal = new BloodAlcoholLevel($user, $post['units'], $post['hours']);
             $bal->setTranslator($this->get('translator'));
-//            \Ahs\B0bBundle\B0b\Utility::debug($bal);
         } else {
             $bal = null;
         }

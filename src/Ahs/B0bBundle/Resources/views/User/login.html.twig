@@ -33,13 +33,18 @@
 
 {% extends 'AhsB0bBundle::layout.html.twig' %}
 
-{% block title %}Aanmelden ← {{ parent() }}{% endblock %}
+{% block title %}{% trans %}Login{% endtrans %} ← {{ parent() }}{% endblock %}
 
 {% block navigation %}
 <nav>
     <ul>
-        <li><a href="{{ path('ahs_b0b_registerpage') }}">{% trans %}Register{% endtrans %}</a></li>
-        <li><a href="{{ path('ahs_b0b_homepage' ) }}">{% trans %}Home{% endtrans %}</a></li>
+        {% if not is_granted('ROLE_USER') %}
+        <li><a href="{{ path('ahs_b0b_register') }}">{% trans %}Register{% endtrans %}</a></li>
+        {% endif %}
+        {% if is_granted('ROLE_USER') %}
+        <li><a href="{{ path('ahs_b0b_logout') }}">{% trans %}Logout{% endtrans %}</a></li>
+        {% endif %}
+        <li><a href="{{ path('ahs_b0b_home'    ) }}">{% trans %}Home{% endtrans %}</a></li>
     </ul>
 </nav>
 {% endblock navigation %}
@@ -49,18 +54,19 @@
 {# Login Form #}
 {% block content %}
     <section>
-        <form novalidate="novalidate" id="form-login" action="{{ path('ahs_b0b_loginpage') }}" method="post"{{ form_enctype(form) }}>
+        <form novalidate="novalidate" id="form-login" action="{{ path('ahs_b0b_login_check') }}" method="post">
             <fieldset class="box style-b">
+                {% if error %}
+                <div class="error">{{ error.message }}</div>
+                {% endif %}
                 <legend>{% trans %}Login{% endtrans %}</legend>
-                {# {{ form_widget(form) }} #}
                 <dl>
-                    <dd>{{ form_widget(form.email      ) }}{{ form_errors(form.email      ) }}</dd>
-                    <dd>{{ form_widget(form.passwordRaw) }}{{ form_errors(form.passwordRaw) }}</dd>
+                    <dd><input type="email" id="login_email" name="email" required="required" placeholder="{% trans %}Email address{% endtrans %}" /></dd>
+                    <dd><input type="password" id="login_password" name="password" required="required" placeholder="{% trans %}Password{% endtrans %}" /></dd>
                     <dd><label class="wrap"><input name="remember" type="checkbox" checked> {% trans %}Remember me{% endtrans %}.</label></dd>
                 </dl>
             </fieldset>
             <p><input name="button-login" type="submit" value="{% trans %}Log me in!{% endtrans %}"></p>
-            {{ form_rest(form) }}
         </form>
     </section>
 {% endblock content %}

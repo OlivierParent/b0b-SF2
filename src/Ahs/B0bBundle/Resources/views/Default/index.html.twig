@@ -38,8 +38,12 @@
 {% block navigation %}
 <nav>
     <ul>
-        <li><a href="{{ path('ahs_b0b_loginpage'   ) }}">{% trans %}Login{% endtrans %}</a></li>
-        <li><a href="{{ path('ahs_b0b_registerpage') }}">{% trans %}Register{% endtrans %}</a></li>
+        {% if is_granted('ROLE_USER') %}
+        <li><a href="{{ path('ahs_b0b_logout'  ) }}">{% trans %}Logout{% endtrans %}</a></li>
+        {% else %}
+        <li><a href="{{ path('ahs_b0b_login'   ) }}">{% trans %}Login{% endtrans %}</a></li>
+        <li><a href="{{ path('ahs_b0b_register') }}">{% trans %}Register{% endtrans %}</a></li>
+        {% endif %}
     </ul>
 </nav>
 {% endblock navigation %}
