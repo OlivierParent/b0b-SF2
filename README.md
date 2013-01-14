@@ -1,176 +1,89 @@
-Symfony Standard Edition
-========================
+     ******************************************************************************
+     *                                                                            *
+     *                                                                            *
+     *                                                                            *
+     *                        aaaAAaaa            HHHHHH                          *
+     *                     aaAAAAAAAAAAaa         HHHHHH                          *
+     *                    aAAAAAAAAAAAAAAa        HHHHHH                          *
+     *                   aAAAAAAAAAAAAAAAAa       HHHHHH                          *
+     *                   aAAAAAa    aAAAAAA                                       *
+     *                   AAAAAa      AAAAAA                                       *
+     *                   AAAAAa      AAAAAA                                       *
+     *                   aAAAAAa     AAAAAA                                       *
+     *                    aAAAAAAaaaaAAAAAA       HHHHHH                          *
+     *                     aAAAAAAAAAAAAAAA       HHHHHH                          *
+     *                      aAAAAAAAAAAAAAA       HHHHHH                          *
+     *                         aaAAAAAAAAAA       HHHHHH                          *
+     *                                                                            *
+     *                                                                            *
+     *                                                                            *
+     *      a r t e v e l d e  u n i v e r s i t y  c o l l e g e  g h e n t      *
+     *                                                                            *
+     *                                                                            *
+     *                                 MEMBER OF GHENT UNIVERITY ASSOCIATION      *
+     *                                                                            *
+     *                                                                            *
+     ******************************************************************************
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony2
-application that you can use as the skeleton for your new applications.
+Symfony2 Blood Alcohol Level calculator
+=======================================
 
-This document contains information on how to download, install, and start
-using Symfony. For a more detailed explanation, see the [Installation][1]
-chapter of the Symfony Documentation.
+This is a demo application written in [Symfony2][1], based on [b0b][2].
 
-1) Installing the Standard Edition
-----------------------------------
+1) Prerequisites
+----------------
+1. A running server stack such as [MAMP][3] or [XAMPP][4].
 
-When it comes to installing the Symfony Standard Edition, you have the
-following options.
+2. A working installation of [Git][5].
 
-### Use Composer (*recommended*)
+3. A working directory where you will store your project folder. This could be the web root of your local server.
 
-As Symfony uses [Composer][2] to manage its dependencies, the recommended way
-to create a new project is to use it.
+4. A symbolic link to the PHP interpreter. In Mac OS X Terminal with MAMP already installed:
 
-If you don't have Composer yet, download it following the instructions on
-http://getcomposer.org/ or just run the following command:
+        $ cd /Applications/MAMP/htdocs/
+        $ ln -s /Applications/MAMP/bin/php/php5.4.4/bin/php php
 
-    curl -s https://getcomposer.org/installer | php
+5. Composer. In Mac OS X Terminal, provided step 4 has been correctly completed:
 
-Then, use the `create-project` command to generate a new Symfony application:
+        $ cd /Applications/MAMP/htdocs/
+        $ curl -s https://getcomposer.org/installer | ./php
 
-    php composer.phar create-project symfony/framework-standard-edition path/to/install 2.1.x-dev
-
-For an exact version, replace 2.1.x-dev with the latest Symfony version (e.g. 2.1.1).
-
-Composer will install Symfony and all its dependencies under the
-`path/to/install` directory.
-
-### Download an Archive File
-
-To quickly test Symfony, you can also download an [archive][3] of the Standard
-Edition and unpack it somewhere under your web server root directory.
-
-If you downloaded an archive "without vendors", you also need to install all
-the necessary dependencies. Download composer (see above) and run the
-following command:
-
-    php composer.phar install
-
-2) Checking your System Configuration
--------------------------------------
-
-Before starting coding, make sure that your local system is properly
-configured for Symfony.
-
-Execute the `check.php` script from the command line:
-
-    php app/check.php
-
-Access the `config.php` script from a browser:
-
-    http://localhost/path/to/symfony/app/web/config.php
-
-If you get any warnings or recommendations, fix them before moving on.
-
-3) Browsing the Demo Application
---------------------------------
-
-Congratulations! You're now ready to use Symfony.
-
-From the `config.php` page, click the "Bypass configuration and go to the
-Welcome page" link to load up your first Symfony page.
-
-You can also use a web-based configurator by clicking on the "Configure your
-Symfony Application online" link of the `config.php` page.
-
-To see a real-live Symfony page in action, access the following page:
-
-    web/app_dev.php/demo/hello/Fabien
-
-4) Getting started with Symfony
--------------------------------
-
-This distribution is meant to be the starting point for your Symfony
-applications, but it also contains some sample code that you can learn from
-and play with.
-
-A great way to start learning Symfony is via the [Quick Tour][4], which will
-take you through all the basic features of Symfony2.
-
-Once you're feeling good, you can move onto reading the official
-[Symfony2 book][5].
-
-A default bundle, `AcmeDemoBundle`, shows you Symfony2 in action. After
-playing with it, you can remove it by following these steps:
-
-  * delete the `src/Acme` directory;
-
-  * remove the routing entries referencing AcmeBundle in
-    `app/config/routing_dev.yml`;
-
-  * remove the AcmeBundle from the registered bundles in `app/AppKernel.php`;
-
-  * remove the `web/bundles/acmedemo` directory;
-
-  * remove the `security.providers`, `security.firewalls.login` and
-    `security.firewalls.secured_area` entries in the `security.yml` file or
-    tweak the security configuration to fit your needs.
-
-What's inside?
+2) Installation
 ---------------
 
-The Symfony Standard Edition is configured with the following defaults:
+1. Go to your working directory
 
-  * Twig is the only configured template engine;
+        $ cd /Applications/MAMP/htdocs/
 
-  * Doctrine ORM/DBAL is configured;
+2. Clone the GitHub project to your working directory:
 
-  * Swiftmailer is configured;
+        $ git clone https://github.com/OlivierParent/b0b-SF2.git b0b-SF2
 
-  * Annotations for everything are enabled.
+3. Create the database schema with `app/src/Ahs/BobBundle/Resources/doc/Schema.sql`
 
-It comes pre-configured with the following bundles:
+4. Add [`app/config/parameters.yml`][6] to match your database configuration. 
 
-  * **FrameworkBundle** - The core Symfony framework bundle
+5. Go to the project folder
 
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
+        $ cd b0b-SF2
 
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
+6. Install Symfony2 Standard Edition with composer
 
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
+        $ ../php ../composer.phar install
 
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
+7. Optionally, install the assets as a symbolic link
 
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
+        $ ../php app/console assets:install --symlink
 
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
+3) Test
+-------
+Open [`http://localhost/b0b-SF2/web/`][7] or [`http://localhost/b0b-SF2/web/app_dev.php`][8] in your browser to test the installation.
 
-  * [**AsseticBundle**][12] - Adds support for Assetic, an asset processing
-    library
-
-  * [**JMSSecurityExtraBundle**][13] - Allows security to be added via
-    annotations
-
-  * [**JMSDiExtraBundle**][14] - Adds more powerful dependency injection
-    features
-
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
-
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
-
-  * [**SensioGeneratorBundle**][15] (in dev/test env) - Adds code generation
-    capabilities
-
-  * **AcmeDemoBundle** (in dev/test env) - A demo bundle with some example
-    code
-
-Enjoy!
-
-[1]:  http://symfony.com/doc/2.1/book/installation.html
-[2]:  http://getcomposer.org/
-[3]:  http://symfony.com/download
-[4]:  http://symfony.com/doc/2.1/quick_tour/the_big_picture.html
-[5]:  http://symfony.com/doc/2.1/index.html
-[6]:  http://symfony.com/doc/2.1/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  http://symfony.com/doc/2.1/book/doctrine.html
-[8]:  http://symfony.com/doc/2.1/book/templating.html
-[9]:  http://symfony.com/doc/2.1/book/security.html
-[10]: http://symfony.com/doc/2.1/cookbook/email.html
-[11]: http://symfony.com/doc/2.1/cookbook/logging/monolog.html
-[12]: http://symfony.com/doc/2.1/cookbook/assetic/asset_management.html
-[13]: http://jmsyst.com/bundles/JMSSecurityExtraBundle/master
-[14]: http://jmsyst.com/bundles/JMSDiExtraBundle/master
-[15]: http://symfony.com/doc/2.1/bundles/SensioGeneratorBundle/index.html
+[1]:  http://symfony.com/
+[2]:  https://github.com/OlivierParent/b0b
+[3]:  http://www.mamp.info/
+[4]:  http://www.apachefriends.org/
+[5]:  http://git-scm.com/
+[6]:  https://gist.github.com/4529627
+[7]:  http://localhost/b0b-SF2/web/
+[8]:  http://localhost/b0b-SF2/web/app_dev.php
